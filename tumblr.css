@@ -7,7 +7,7 @@
 }
 
 
-/* --- Tùy chỉnh Bố cục 3 cột (10% - 80% - 10%) --- */
+/* Tùy chỉnh Bố cục 3 cột (10% - 80% - 10%) - Tăng độ ưu tiên */
 
 /* 1. Áp dụng cho khối chứa nội dung chính */
 .wrapper {
@@ -16,19 +16,26 @@
     margin-right: auto !important; 
 }
 
-/* 2. Áp dụng cho Thanh điều hướng cố định (nếu có) */
+/* 2. Áp dụng cho khối chứa toàn bộ trang (#page) */
+/* Thử thêm quy tắc này vì #page là cha của .wrapper, độ ưu tiên ID rất cao */
+#page {
+    width: 80% !important; 
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* 3. Áp dụng cho Thanh điều hướng cố định (nếu có) */
 .nav-fixed {
     max-width: 80% !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    /* Dùng giá trị mặc định cho màu nền thanh nav */
-    background-color: var(--default-background-color); 
 }
 
-/* 3. Tùy chỉnh cho Di động (rất quan trọng) */
+/* 4. Tùy chỉnh cho Di động */
 @media screen and (max-width: 768px) {
     .wrapper,
-    .nav-fixed {
+    .nav-fixed,
+    #page { /* Áp dụng lại 100% cho #page trên di động */
         max-width: 100% !important; 
         padding-left: 15px;
         padding-right: 15px;
@@ -36,7 +43,6 @@
         margin-right: auto;
     }
 }
-
 
 /* -------------------------------------------------------------------------- */
 /* Quy tắc CSS đã bị LOẠI BỎ BIẾN (Dùng giá trị mặc định hoặc cố định) */

@@ -85,3 +85,37 @@
     -o-transition: 200ms ease-out;
     transition: 200ms ease-out;
 }
+
+/* Tùy chỉnh Bố cục 3 cột (10% - 80% - 10%) */
+
+/* Giả sử khối chứa nội dung chính (wrapper) của theme là .wrapper hoặc .container. 
+   Nếu tên class khác, bạn cần thay thế .wrapper. */
+.wrapper {
+    /* Giới hạn chiều rộng tối đa của nội dung là 80% màn hình */
+    max-width: 80% !important; 
+    
+    /* Căn giữa khối nội dung */
+    margin-left: auto !important;
+    margin-right: auto !important; 
+    
+    /* Đảm bảo nội dung không bị tràn ra ngoài */
+    padding: 0 10px; /* Có thể thêm padding nhỏ để tránh nội dung chạm mép */
+}
+
+/* Đảm bảo thanh điều hướng hoặc các phần tử cố định khác cũng được căn giữa 
+   theo cùng một chiều rộng nếu cần */
+.nav-fixed {
+    max-width: 80% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Các tùy chỉnh dành cho di động */
+@media screen and (max-width: 768px) {
+    .wrapper,
+    .nav-fixed {
+        /* Trên thiết bị di động, nên trả về 100% hoặc gần 100% để hiển thị dễ dàng hơn */
+        max-width: 100% !important; 
+        padding: 0 15px; /* Giữ padding hai bên */
+    }
+}

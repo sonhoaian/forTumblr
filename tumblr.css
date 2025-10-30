@@ -1,110 +1,87 @@
-           /* Colors */
-            body {
-                background: {BackgroundColor};
-            }
+/* Tựa đề và Mô tả */
+.blog-title {
+    -webkit-transition: 200ms ease-out;
+    -moz-transition: 200ms ease-out;
+    -ms-transition: 200ms ease-out;
+    -o-transition: 200ms ease-out;
+    transition: 200ms ease-out;
+}
 
-            .blog-title {
-                font-family: {TitleFont}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
-                font-weight: {TitleFontWeight};
-            }
+/* Ảnh đại diện */
+.user-avatar {
+    -webkit-transition: 200ms ease-out;
+    -moz-transition: 200ms ease-out;
+    -ms-transition: 200ms ease-out;
+    -o-transition: 200ms ease-out;
+    transition: 200ms ease-out;
+}
 
-            .blog-title a,
-            .description,
-            .search-no-results,
-            .likes-no-likes,
-            .related-posts-wrapper > h2,
-            .loader .loader-bar,
-            .widget-title,
-            .tagged-page-cta .tagged-page-cta-desc {
-                color: {TitleColor};
-            }
+.avatar-style-square .user-avatar {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
 
-            .tagged-page-cta .tagged-page-cta-tag {
-                color: {TitleColor};
-                border-color: {TitleColor};
-            }
+.avatar-style-square .user-avatar {
+    -webkit-box-shadow: 0 0 0 4px #fff;
+    -moz-box-shadow: 0 0 0 4px #fff;
+    box-shadow: 0 0 0 4px #fff;
+}
 
-            a {
-                color: {AccentColor};
-            }
+.avatar-style-square.mobile-avatar .user-avatar {
+    -webkit-box-shadow: 0 0 0 3px #fff;
+    -moz-box-shadow: 0 0 0 3px #fff;
+    box-shadow: 0 0 0 3px #fff;
+}
 
-            #pagination a,
-            .nav-wrapper .nav-item .label {
-                color: {AccentColor};
-            }
+/* Điều chỉnh logo cho các chủ đề sáng/tối */
+/* Điều chỉnh logo cho nền sáng */
+.light-on-light.no-header-image .logo-wrapper,
+.light-on-light.contain-header-image .logo-wrapper {
+    color: #444;
+}
 
-            #pagination a.next:after {
-                border-left-color: {AccentColor};
-            }
+/* Điều chỉnh logo cho nền tối */
+.dark-on-dark.no-header-image .logo-wrapper,
+.dark-on-dark.contain-header-image .logo-wrapper {
+    color: #fff;
+}
 
-            #pagination a.previous:after {
-                border-right-color: {AccentColor};
-            }
+/* Ẩn các nút điều khiển iframe trên trình duyệt cũ */
+.tmblr-iframe-compact .tmblr-iframe--unified-controls {
+    display: none;
+}
 
-            .header-image.cover {
-                background-image: url({HeaderImage});
-            }
+/* Thanh điều hướng */
+.nav-wrapper .nav-item .label {
+    -webkit-transition: 200ms ease-out;
+    -moz-transition: 200ms ease-out;
+    -ms-transition: 200ms ease-out;
+    -o-transition: 200ms ease-out;
+    transition: 200ms ease-out;
+}
 
-            .user-avatar {
-                background-color: {BackgroundColor};
-                border-color: {BackgroundColor};
-            }
+.nav-wrapper .nav-item:hover .label {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
 
-            .avatar-style-square .user-avatar {
-                -webkit-box-shadow: 0 0 0 4px {BackgroundColor};
-                box-shadow: 0 0 0 4px {BackgroundColor};
-            }
+.nav-wrapper .nav-item.active .label {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
 
-            .no-header-image .logo-wrapper,
-            .contain-header-image .logo-wrapper {
-                color: {AccentColor};
-            }
-
-            /* Adjust logo for light accents on light backgrounds */
-            .light-on-light.no-header-image .logo-wrapper,
-            .light-on-light.contain-header-image .logo-wrapper {
-                color: #444;
-            }
-
-            /* Adjust logo for dark accents on dark backgrounds */
-            .dark-on-dark.no-header-image .logo-wrapper,
-            .dark-on-dark.contain-header-image .logo-wrapper {
-                color: #fff;
-            }
-
-            /* Logged-out compact Tumblr iframe */
-            .tmblr-iframe-compact .tmblr-iframe--unified-controls {
-                min-width: 100%;
-                background-color: {BackgroundColor};
-            }
-
-            /* Sticky nav colors */
-            .nav-fixed {
-                background-color: {BackgroundColor};
-            }
-
-            .nav-responsive .inline-nav::after {
-                background-image: linear-gradient(left, rgba({RGBBackgroundColor}, 0) 0%, rgba({RGBBackgroundColor},1) 100%);
-                background-image: -webkit-linear-gradient(left, rgba({RGBBackgroundColor}, 0) 0%, rgba({RGBBackgroundColor},1) 100%);
-                background-image: -moz-linear-gradient(left, rgba({RGBBackgroundColor}, 0) 0%, rgba({RGBBackgroundColor},1) 100%);
-                background-image: -ms-linear-gradient(left, rgba({RGBBackgroundColor}, 0) 0%, rgba({RGBBackgroundColor},1) 100%);
-                background-image: -o-linear-gradient(left, rgba({RGBBackgroundColor}, 0) 0%, rgba({RGBBackgroundColor},1) 100%);
-            }
-
-            @media screen and (max-device-width: 568px) {
-                .header-image.cover {
-                    background-image: url({HeaderImage-640});
-                    -webkit-background-size: cover;
-                    background-size: cover;
-                }
-
-                .avatar-style-square .user-avatar {
-                    -webkit-box-shadow: 0 0 0 3px {BackgroundColor};
-                    -moz-box-shadow: 0 0 0 3px {BackgroundColor};
-                    box-shadow: 0 0 0 3px {BackgroundColor};
-                }
-
-            }
-
-            /* Custom CSS */
-            {CustomCSS}
+/* Phân trang */
+#pagination a {
+    -webkit-transition: 200ms ease-out;
+    -moz-transition: 200ms ease-out;
+    -ms-transition: 200ms ease-out;
+    -o-transition: 200ms ease-out;
+    transition: 200ms ease-out;
+}

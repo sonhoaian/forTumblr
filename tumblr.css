@@ -1,3 +1,150 @@
+/* --- GIÁ TRỊ MẶC ĐỊNH (THAY THẾ BIẾN TUMBLR) --- */
+/* (Bạn có thể thay đổi các giá trị này nếu muốn một theme màu khác) */
+:root {
+    --default-background-color: #f5f5f5; /* Thường là màu nền sáng */
+    --default-title-color: #444;       /* Thường là màu chữ tối */
+    --default-accent-color: #000;      /* Thường là màu liên kết/nhấn mạnh */
+}
+
+
+/* --- Tùy chỉnh Bố cục 3 cột (10% - 80% - 10%) --- */
+
+/* 1. Áp dụng cho khối chứa nội dung chính */
+.wrapper {
+    max-width: 80% !important; 
+    margin-left: auto !important;
+    margin-right: auto !important; 
+}
+
+/* 2. Áp dụng cho Thanh điều hướng cố định (nếu có) */
+.nav-fixed {
+    max-width: 80% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    /* Dùng giá trị mặc định cho màu nền thanh nav */
+    background-color: var(--default-background-color); 
+}
+
+/* 3. Tùy chỉnh cho Di động (rất quan trọng) */
+@media screen and (max-width: 768px) {
+    .wrapper,
+    .nav-fixed {
+        max-width: 100% !important; 
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* Quy tắc CSS đã bị LOẠI BỎ BIẾN (Dùng giá trị mặc định hoặc cố định) */
+/* -------------------------------------------------------------------------- */
+
+body {
+    /* Thay thế {BackgroundColor} */
+    background: var(--default-background-color) !important; 
+}
+
+.blog-title {
+    /* Giữ nguyên font-family tĩnh, loại bỏ {TitleFont} và {TitleFontWeight} */
+    font-family: "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+}
+
+.blog-title a,
+.description,
+.search-no-results,
+.likes-no-likes,
+.related-posts-wrapper > h2,
+.loader .loader-bar,
+.widget-title,
+.tagged-page-cta .tagged-page-cta-desc {
+    /* Thay thế {TitleColor} */
+    color: var(--default-title-color);
+}
+
+.tagged-page-cta .tagged-page-cta-tag {
+    /* Thay thế {TitleColor} */
+    color: var(--default-title-color);
+    border-color: var(--default-title-color);
+}
+
+a {
+    /* Thay thế {AccentColor} */
+    color: var(--default-accent-color);
+}
+
+#pagination a,
+.nav-wrapper .nav-item .label {
+    /* Thay thế {AccentColor} */
+    color: var(--default-accent-color);
+}
+
+#pagination a.next:after {
+    /* Thay thế {AccentColor} */
+    border-left-color: var(--default-accent-color);
+}
+
+#pagination a.previous:after {
+    /* Thay thế {AccentColor} */
+    border-right-color: var(--default-accent-color);
+}
+
+.header-image.cover {
+    /* LOẠI BỎ {HeaderImage} và {HeaderImage-640} - KHÔNG THỂ DÙNG ẢNH MẶC ĐỊNH */
+    /* Nếu bạn muốn ảnh header, bạn phải đặt URL cố định ở đây: */
+    /* background-image: url('https://url-anh-header-cua-ban.jpg') !important; */
+}
+
+.user-avatar {
+    /* Thay thế {BackgroundColor} */
+    background-color: var(--default-background-color);
+    border-color: var(--default-background-color);
+}
+
+.avatar-style-square .user-avatar {
+    /* Thay thế {BackgroundColor} */
+    -webkit-box-shadow: 0 0 0 4px var(--default-background-color);
+    box-shadow: 0 0 0 4px var(--default-background-color);
+}
+
+.no-header-image .logo-wrapper,
+.contain-header-image .logo-wrapper {
+    /* Thay thế {AccentColor} */
+    color: var(--default-accent-color);
+}
+
+.tmblr-iframe-compact .tmblr-iframe--unified-controls {
+    min-width: 100%;
+    /* Thay thế {BackgroundColor} */
+    background-color: var(--default-background-color);
+}
+
+.nav-fixed {
+    /* Thay thế {BackgroundColor} */
+    background-color: var(--default-background-color);
+}
+
+.nav-responsive .inline-nav::after {
+    /* LOẠI BỎ {RGBBackgroundColor} và dùng giá trị rgba cố định tương đương */
+    background-image: linear-gradient(to left, rgba(245, 245, 245, 0) 0%, rgba(245, 245, 245, 1) 100%);
+    /* Thêm các tiền tố trình duyệt khác tương ứng */
+}
+
+@media screen and (max-device-width: 568px) {
+    .avatar-style-square .user-avatar {
+        /* Thay thế {BackgroundColor} */
+        -webkit-box-shadow: 0 0 0 3px var(--default-background-color);
+        -moz-box-shadow: 0 0 0 3px var(--default-background-color);
+        box-shadow: 0 0 0 3px var(--default-background-color);
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Quy tắc CSS TĨNH CÒN LẠI TỪ FILE GỐC */
+/* -------------------------------------------------------------------------- */
+
 /* Tựa đề và Mô tả */
 .blog-title {
     -webkit-transition: 200ms ease-out;
@@ -6,8 +153,8 @@
     -o-transition: 200ms ease-out;
     transition: 200ms ease-out;
 }
-
-/* Ảnh đại diện */
+/* ... (Tất cả các quy tắc tĩnh khác từ file gốc) ... */
+/* Tôi giữ lại các quy tắc tĩnh (transition, border-radius, box-shadow cố định) */
 .user-avatar {
     -webkit-transition: 200ms ease-out;
     -moz-transition: 200ms ease-out;
@@ -35,13 +182,11 @@
 }
 
 /* Điều chỉnh logo cho các chủ đề sáng/tối */
-/* Điều chỉnh logo cho nền sáng */
 .light-on-light.no-header-image .logo-wrapper,
 .light-on-light.contain-header-image .logo-wrapper {
     color: #444;
 }
 
-/* Điều chỉnh logo cho nền tối */
 .dark-on-dark.no-header-image .logo-wrapper,
 .dark-on-dark.contain-header-image .logo-wrapper {
     color: #fff;
@@ -84,38 +229,4 @@
     -ms-transition: 200ms ease-out;
     -o-transition: 200ms ease-out;
     transition: 200ms ease-out;
-}
-
-/* Tùy chỉnh Bố cục 3 cột (10% - 80% - 10%) */
-
-/* Giả sử khối chứa nội dung chính (wrapper) của theme là .wrapper hoặc .container. 
-   Nếu tên class khác, bạn cần thay thế .wrapper. */
-.wrapper {
-    /* Giới hạn chiều rộng tối đa của nội dung là 80% màn hình */
-    max-width: 80% !important; 
-    
-    /* Căn giữa khối nội dung */
-    margin-left: auto !important;
-    margin-right: auto !important; 
-    
-    /* Đảm bảo nội dung không bị tràn ra ngoài */
-    padding: 0 10px; /* Có thể thêm padding nhỏ để tránh nội dung chạm mép */
-}
-
-/* Đảm bảo thanh điều hướng hoặc các phần tử cố định khác cũng được căn giữa 
-   theo cùng một chiều rộng nếu cần */
-.nav-fixed {
-    max-width: 80% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-/* Các tùy chỉnh dành cho di động */
-@media screen and (max-width: 768px) {
-    .wrapper,
-    .nav-fixed {
-        /* Trên thiết bị di động, nên trả về 100% hoặc gần 100% để hiển thị dễ dàng hơn */
-        max-width: 100% !important; 
-        padding: 0 15px; /* Giữ padding hai bên */
-    }
 }

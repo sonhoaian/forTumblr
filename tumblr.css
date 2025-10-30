@@ -1,5 +1,4 @@
-
-            /* Colors */
+           /* Colors */
             body {
                 background: {BackgroundColor};
             }
@@ -106,4 +105,6 @@
                 }
 
             }
-        
+
+            /* Custom CSS */
+            {CustomCSS}
